@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.authors  = ['Faisal Mansoor']
   s.email    = ['faisal.mansoor@gmail.com']
   s.homepage = 'http://github.com/faisalmansoor'
+  s.license = 'MIT'
 
   s.description = s.summary = 'Tools to help parametrize queries.'
 
@@ -15,13 +16,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activerecord', '>= 4.2.0', '< 5'
 
-  # include only files in version control
-  git_dir = File.expand_path('../.git', __FILE__)
-  void = defined?(File::NULL) ? File::NULL :
-      RbConfig::CONFIG['host_os'] =~ /msdos|mswin|djgpp|mingw/ ? 'NUL' : '/dev/null'
-
-  if File.directory?(git_dir) and system "git --version >>#{void} 2>&1"
-    s.files &= `git --git-dir='#{git_dir}' ls-files -z`.split("\0")
-  end
+  s.files = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]
 
 end
