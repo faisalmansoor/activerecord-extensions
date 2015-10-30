@@ -35,7 +35,7 @@ Post.where('id = ?', 1)
 # SELECT [posts].* FROM [posts] WHERE (id = 1)
 ```
 
-Since has conditions can only generate `eq` conditions with `and` operator, queries involving `<`, `>`
+ActiveRecord can only generate parameterized queries for `eq` conditions with `and` operator, queries involving `<`, `>`
 and other operators are non parameterized by ActiveRecord.
 
 QueryBuilder helps you easily parameterize `<`, `>`, `in` and raw arel conditions.
