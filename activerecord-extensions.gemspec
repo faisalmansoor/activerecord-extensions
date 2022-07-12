@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = true
 
-  s.add_dependency 'activerecord', '>= 4.2.0', '< 5'
+  s.add_dependency 'activerecord', '>= 4.2.0', '< 8'
 
   s.files = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]
 
